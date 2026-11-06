@@ -44,6 +44,18 @@ function App() {
   })}
 </div>
 
+<div>
+  <label>City</label>
+
+  <select>
+    <option value="">Select your city</option>
+
+    {config.cities.map((city) => {
+      return <option key={city} value={city}>{city}</option>;
+    })}
+  </select>
+</div>
+
     </from>
     </div>
   );
