@@ -11,6 +11,39 @@ function App() {
         <label>Full Name</label>
         <input type="text" placeholder="Enter your full name" />
       </div>
+
+      <div>
+  <label>Gender</label>
+
+  <div>
+    <input type="radio" name="gender" value="Male" />
+    <label>Male</label>
+  </div>
+
+  <div>
+    <input type="radio" name="gender" value="Female" />
+    <label>Female</label>
+  </div>
+
+  <div>
+    <input type="radio" name="gender" value="Other" />
+    <label>Other</label>
+  </div>
+</div>
+
+<div>
+  <label>Skills</label>
+
+  {config.skills.map((skill) => {
+    return (
+      <div key={skill}>
+        <input type="checkbox" value={skill} />
+        <label>{skill}</label>
+      </div>
+    );
+  })}
+</div>
+
     </from>
     </div>
   );
