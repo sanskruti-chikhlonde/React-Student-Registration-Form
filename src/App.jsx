@@ -56,6 +56,11 @@ function App() {
   </select>
 </div>
 
+<div>
+  <label>Address</label>
+  <textarea placeholder="Enter your address"></textarea>
+</div>
+
     </from>
     </div>
   );
