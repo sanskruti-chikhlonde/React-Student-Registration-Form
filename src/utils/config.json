@@ -1,0 +1,18 @@
+{
+  "title": "Student Registration Form",
+  "description": "Fill in your details to register.",
+
+  "cities": [
+    "Nagpur",
+    "Pune",
+    "Mumbai",
+    "Nashik"
+  ],
+
+  "skills": [
+    "HTML",
+    "CSS",
+    "JavaScript",
+    "React"
+  ]
+}
