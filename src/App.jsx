@@ -1,15 +1,24 @@
+import { useState } from "react";
 import config from "./utils/config.json";
 
 function App() {
+
+  const [fullName, setFullName] = useState("");
+
   return (
     <div>
       <h1>{config.title}</h1>
       <p>{config.description}</p>
 
-    <from>
+    <form>
       <div>
         <label>Full Name</label>
-        <input type="text" placeholder="Enter your full name" />
+        <input type="text" type="text"
+         placeholder="Enter your full name"
+         value={fullName}
+         onChange={(e) => {
+         setFullName(e.target.value);
+         }} />
       </div>
 
       <div>
@@ -61,7 +70,7 @@ function App() {
   <textarea placeholder="Enter your address"></textarea>
 </div>
 
-    </from>
+    </form>
     </div>
   );
 }
