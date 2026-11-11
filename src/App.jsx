@@ -12,13 +12,18 @@ const [javascript, setJavascript] = useState(false);
 const [react, setReact] = useState(false);
 const [city, setCity] = useState("");
 const [address, setAddress] = useState("");
+const [submitted, setSubmitted] = useState(false);
 
   return (
     <div>
       <h1>{config.title}</h1>
       <p>{config.description}</p>
 
-    <form>
+    <form 
+      onSubmit={(e) =>{
+        e.preventDefault();
+        setSubmitted(true);
+      }}>
       <div>
         <label>Full Name</label>
         <input type="text"
@@ -61,7 +66,7 @@ const [address, setAddress] = useState("");
      type="radio" 
      name="gender" 
      value="Other"
-     chanked={gender === "Other"}
+     checked={gender === "Other"}
      onChange={(e) => {
       setGender(e.target.value);
      }} />
@@ -128,7 +133,30 @@ const [address, setAddress] = useState("");
    </textarea>
 </div>
 
+<div>
+  <button type="submit">Submit</button>
+</div>
+
     </form>
+
+    {submitted && (
+  <div>
+    <h2>Student Details</h2>
+
+    <p>Full Name: {fullName}</p>
+    <p>Gender: {gender}</p>
+
+    <p>Skills:</p>
+    {html && <p>HTML</p>}
+    {css && <p>CSS</p>}
+    {javascript && <p>JavaScript</p>}
+    {react && <p>React</p>}
+
+    <p>City: {city}</p>
+    <p>Address: {address}</p>
+  </div>
+)}
+
     </div>
   );
 }
