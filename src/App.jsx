@@ -11,6 +11,7 @@ const [css, setCss] = useState(false);
 const [javascript, setJavascript] = useState(false);
 const [react, setReact] = useState(false);
 const [city, setCity] = useState("");
+const [address, setAddress] = useState("");
 
   return (
     <div>
@@ -118,7 +119,13 @@ const [city, setCity] = useState("");
 
 <div>
   <label>Address</label>
-  <textarea placeholder="Enter your address"></textarea>
+  <textarea
+   placeholder="Enter your address"
+   value={address}
+   onChange={(e) => {
+    setAddress(e.target.value);
+   }}>
+   </textarea>
 </div>
 
     </form>
