@@ -4,6 +4,12 @@ import config from "./utils/config.json";
 function App() {
 
   const [fullName, setFullName] = useState("");
+  const [gender, setGender] = useState("Male");
+
+const [html, setHtml] = useState(false);
+const [css, setCss] = useState(false);
+const [javascript, setJavascript] = useState(false);
+const [react, setReact] = useState(false);
 
   return (
     <div>
@@ -13,7 +19,7 @@ function App() {
     <form>
       <div>
         <label>Full Name</label>
-        <input type="text" type="text"
+        <input type="text"
          placeholder="Enter your full name"
          value={fullName}
          onChange={(e) => {
@@ -25,17 +31,38 @@ function App() {
   <label>Gender</label>
 
   <div>
-    <input type="radio" name="gender" value="Male" />
+    <input 
+    type="radio"
+     name="gender" 
+     value="Male"
+     checked={gender === "Male"}
+     onChange={(e) => {
+      setGender(e.target.value);
+     }} />
     <label>Male</label>
   </div>
 
   <div>
-    <input type="radio" name="gender" value="Female" />
+    <input 
+    type="radio" 
+    name="gender" 
+    value="Female"
+    checked={gender === "Female"}
+    onChange={(e) => {
+      setGender(e.target.value);
+    }} />
     <label>Female</label>
-  </div>
+  </div> 
 
   <div>
-    <input type="radio" name="gender" value="Other" />
+    <input
+     type="radio" 
+     name="gender" 
+     value="Other"
+     chanked={gender === "Other"}
+     onChange={(e) => {
+      setGender(e.target.value);
+     }} />
     <label>Other</label>
   </div>
 </div>
@@ -46,7 +73,26 @@ function App() {
   {config.skills.map((skill) => {
     return (
       <div key={skill}>
-        <input type="checkbox" value={skill} />
+        <input type="checkbox"
+         value={skill}
+         checked={
+          skill === "HTML" ? html :
+          skill === "CSS" ? css :
+          skill === "JavaScript" ? javascript :
+          react
+         }
+         onChange= {(e) => {
+          if (skill === "HTML") {
+            setHtml(e.target.checked);
+          } else if (skill === "CSS"){
+            setCss(e.target.checked);
+          } else if (skill === "JavaScript") {
+      setJavascript(e.target.checked);
+    } else {
+      setReact(e.target.checked);
+    }
+
+         }} />
         <label>{skill}</label>
       </div>
     );
