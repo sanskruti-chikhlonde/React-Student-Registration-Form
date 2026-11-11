@@ -1,5 +1,6 @@
 import { useState } from "react";
 import config from "./utils/config.json";
+import "./App.css";
 
 function App() {
 
@@ -15,15 +16,17 @@ const [address, setAddress] = useState("");
 const [submitted, setSubmitted] = useState(false);
 
   return (
-    <div>
+    <div className="container">
       <h1>{config.title}</h1>
       <p>{config.description}</p>
 
     <form 
+      className="student-form"
       onSubmit={(e) =>{
         e.preventDefault();
         setSubmitted(true);
       }}>
+
       <div>
         <label>Full Name</label>
         <input type="text"
@@ -140,7 +143,7 @@ const [submitted, setSubmitted] = useState(false);
     </form>
 
     {submitted && (
-  <div>
+  <div className="submitted-details">
     <h2>Student Details</h2>
 
     <p>Full Name: {fullName}</p>
