@@ -10,6 +10,7 @@ const [html, setHtml] = useState(false);
 const [css, setCss] = useState(false);
 const [javascript, setJavascript] = useState(false);
 const [react, setReact] = useState(false);
+const [city, setCity] = useState("");
 
   return (
     <div>
@@ -102,12 +103,16 @@ const [react, setReact] = useState(false);
 <div>
   <label>City</label>
 
-  <select>
-    <option value="">Select your city</option>
+  <select
+   value={city}
+    onChange={(e) => {
+      setCity(e.target.value);
+    }}>
+      <option value="">Select your city</option>
 
-    {config.cities.map((city) => {
-      return <option key={city} value={city}>{city}</option>;
-    })}
+      {config.cities.map((city) => {
+        return <option key={city} value={city}>{city}</option>;
+   })}
   </select>
 </div>
 
