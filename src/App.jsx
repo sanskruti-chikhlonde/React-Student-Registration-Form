@@ -149,11 +149,10 @@ const [submitted, setSubmitted] = useState(false);
     <p>Full Name: {fullName}</p>
     <p>Gender: {gender}</p>
 
-    <p>Skills:</p>
-    {html && <p>HTML</p>}
-    {css && <p>CSS</p>}
-    {javascript && <p>JavaScript</p>}
-    {react && <p>React</p>}
+    <p>
+      Skills: {html && "HTML"} {css && "CSS"}
+      {javascript && "JavaScript"} {react && "React"}
+    </p>
 
     <p>City: {city}</p>
     <p>Address: {address}</p>
